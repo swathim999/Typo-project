@@ -1,0 +1,22 @@
+body{
+    background: #1d2620;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.container {
+    width: 800px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    border-radius: 20px;
+    padding: 40px;
+    text-align: justify;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+}
+*{
+    color: #fff;
+}
+#update{
+    display: none;
+}
