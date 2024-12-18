@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <a href="main.html" class="logo">ProTyping</a>
+            <ul>
+                <li class="active"><a href="main.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="get-started.html">Get Started</a></li>
+                <li><a href="stats.html">Stats</a></li>
+                <li><a href="login.html">Login</a></li>
+            </ul>
+        </nav>
+        </header>
+    <div class="form-container">
+        <form id="register-form">
+            <h1><i class='bx bxs-user-plus'></i> Register</h1>
+            <div class="input-box">
+                <i class='bx bxs-user'></i>
+                <input type="text" id="register-username" placeholder="Username" required>
+            </div>
+            <div class="input-box">
+                <i class='bx bxs-envelope'></i>
+                <input type="email" id="register-email" placeholder="Email" required>
+            </div>
+            <div class="input-box">
+                <i class='bx bxs-lock-alt'></i>
+                <input type="password" id="register-password" placeholder="Password" required>
+            </div>
+            <div class="input-box">
+                <i class='bx bxs-lock-alt'></i>
+                <input type="password" id="confirm-password" placeholder="Confirm Password" required>
+            </div>
+            <div class="reveal-password">
+                <input type="checkbox" id="show-password" onclick="togglePassword()"> Show Password
+            </div>
+            <button type="submit" class="btn">Register</button>
+            <p>Already have an account? <a href="login.html">Login</a></p>
+            <div class="message" id="register-message"></div>
+        </form>
+    </div>
+
+    <script>
+        // Form submission
+        document.getElementById("register-form").addEventListener("submit", (e) => {
+            e.preventDefault();
+            const username = document.getElementById("register-username").value;
+            const password = document.getElementById("register-password").value;
+            const confirmPassword = document.getElementById("confirm-password").value;
+            const messageBox = document.getElementById("register-message");
+
+            if (password !== confirmPassword) {
+    messageBox.textContent = "Passwords do not match!";
+    messageBox.style.color = "red";
+} else {
+    localStorage.setItem("username", username);
+    localStorage.setItem("password", password);  // Save the password
+    messageBox.textContent = "Registration successful!";
+    messageBox.style.color = "green";
+}
+        });
+
+        // Toggle Password Visibility
+        function togglePassword() {
+            const passwordFields = document.querySelectorAll("#register-password, #confirm-password");
+            const showPassword = document.getElementById("show-password").checked;
+            
+            passwordFields.forEach(field => {
+                field.type = showPassword ? "text" : "password";
+            });
+        }
+    
+    </script>
+</body>
+</html>

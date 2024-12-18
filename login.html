@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <a href="main.html" class="logo">ProTyping</a>
+            <ul>
+                <li class="active"><a href="main.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="get-started.html">Get Started</a></li>
+                <li><a href="stats.html">Stats</a></li>
+                <li><a href="login.html">Login</a></li>
+            </ul>
+        </nav>
+        </header>
+    <div class="form-container">
+        <form id="login-form">
+            <h1><i class='bx bxs-user'></i> Login</h1>
+            <div class="input-box">
+                <i class='bx bxs-user'></i>
+                <input type="text" id="login-username" placeholder="Username" required>
+            </div>
+            <div class="input-box">
+                <i class='bx bxs-lock-alt'></i>
+                <input type="password" id="login-password" placeholder="Password" required>
+            </div>
+            <div class="reveal-password">
+                <label>
+                    <input type="checkbox" id="show-password"> Show Password
+                </label>
+            </div>
+            <button type="submit" class="btn">Login</button>
+            <p>Don’t have an account? <a href="register.html">Register</a></p>
+            <div class="message" id="login-message"></div>
+        </form>
+    </div>
+
+    <script>
+        // Toggle Password Visibility
+        document.getElementById("show-password").addEventListener("change", () => {
+            const passwordField = document.getElementById("login-password");
+            passwordField.type = document.getElementById("show-password").checked ? "text" : "password";
+        });
+
+        // Form submission
+        document.getElementById("login-form").addEventListener("submit", (e) => {
+            e.preventDefault();
+
+            const storedUsername = localStorage.getItem("username");
+            const storedPassword = localStorage.getItem("password");
+            const enteredUsername = document.getElementById("login-username").value;
+            const enteredPassword = document.getElementById("login-password").value;
+            const messageBox = document.getElementById("login-message");
+
+            if (enteredUsername === storedUsername && enteredPassword === storedPassword) {
+                messageBox.textContent = "Login successful!";
+                messageBox.style.color = "green";
+
+                localStorage.setItem("isLoggedIn", "true");
+                setTimeout(() => {
+            window.location.href = "main.html"; // Replace with your home page path
+        }, 100);
+            } else {
+                messageBox.textContent = "Wrong username or password!";
+                messageBox.style.color = "red";
+            }
+        });
+    </script>
+</body>
+</html>
