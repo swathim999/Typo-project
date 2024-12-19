@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Typing Learning Website</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* General Styling */
+        body {
+            font-family: 'Roboto', sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            background-color: #f7f9fc;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-image: url('./Background.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+        }
+        a {
+    color:black;
+    text-decoration: none;
+    
+ }
+
+        .container {
+            background-color: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 80%;
+            max-width: 800px;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+            font-size: 32px;
+            color: #333;
+        }
+
+        .text-display {
+            font-size: 24px;
+            margin-bottom: 20px;
+            color: #333;
+            word-wrap: break-word;
+            line-height: 1.6;
+        }
+
+        .input-area {
+            font-size: 20px;
+            padding: 10px;
+            width: 90%;
+            border: 2px solid #ddd;
+            border-radius: 10px;
+            outline: none;
+        }
+
+        .timer {
+            font-size: 20px;
+            color: #dc3545;
+            margin: 10px 0;
+        }
+
+        .button-group, .next-lesson {
+            margin-top: 20px;
+        }
+
+        button {
+            font-size: 18px;
+            padding: 10px 15px;
+            margin: 5px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+
+        button:hover {
+            transform: translateY(-3px);
+        }
+
+        button:disabled {
+            background-color: #ccc;
+            cursor: not-allowed;
+        }
+
+        /* Specific Buttons */
+        .start-button { background-color: #28a745; color: white; }
+        .submit-button { background-color: #17a2b8; color: white; }
+        .end-button { background-color: #dc3545; color: white; }
+        .restart-button { background-color: #007bff; color: white; }
+        .retry-button, .next-lesson-button { background-color: #ffc107; color: black; }
+        .toggle-keyboard-button { background-color: #ffc107; color: #333; }
+
+        .hidden {
+            display: none;
+        }
+
+        .keyboard {
+            margin-top: 20px;
+        }
+
+        .row {
+            display: flex;
+            justify-content: center;
+            margin: 5px 0;
+        }
+
+        .keyboard button {
+            font-size: 18px;
+            padding: 15px;
+            margin: 5px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .result-message {
+            font-size: 24px;
+            font-weight: bold;
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <a href="main.html" class="logo">ProTyping</a>
+            <ul>
+                <li class="active"><a href="main.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="get-started.html">Get Started</a></li>
+                <li><a href="stats.html">Stats</a></li>
+            </ul>
+        </nav>
+        </header>
+    <div class="container">
+        <h1>Typing Learning Website</h1>
+        <div class="text-display" id="textDisplay">Type this text to improve your typing skills!</div>
+        <div class="timer" id="timer">Time left: 20s</div>
+        <input type="text" class="input-area" id="textInput" placeholder="Start typing here..." disabled>
+
+        <div class="button-group">
+            <button id="startButton" class="start-button">Start</button>
+            <button id="submitButton" class="submit-button" disabled>Submit</button>
+            <button id="endButton" class="end-button" disabled>End</button>
+            <button id="restartButton" class="restart-button" disabled>Restart</button>
+            <button id="toggleKeyboardButton" class="toggle-keyboard-button">Show Keyboard</button>
+        </div>
+
+        <div class="next-lesson hidden" id="nextLessonSection">
+            <p id="resultMessage" class="result-message"></p>
+            <button id="retryButton" class="retry-button">Retry</button>
+            <button id="nextLessonButton" class="next-lesson-button">Next Lesson</button>
+        </div>
+
+        <div class="keyboard hidden" id="keyboard">
+            <div class="row">
+                <button>Q</button><button>W</button><button>E</button><button>R</button>
+                <button>T</button><button>Y</button><button>U</button><button>I</button><button>O</button><button>P</button>
+            </div>
+            <div class="row">
+                <button>A</button><button>S</button><button>D</button><button>F</button>
+                <button>G</button><button>H</button><button>J</button><button>K</button><button>L</button>
+            </div>
+            <div class="row">
+                <button>Z</button><button>X</button><button>C</button><button>V</button><button>B</button>
+                <button>N</button><button>M</button>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
