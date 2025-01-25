@@ -1,0 +1,177 @@
+.container {
+  padding: 20px;
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f9;
+  min-height: 100vh;
+}
+
+.typingContainer {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.typingAreaContainer {
+  display: flex;
+  flex-wrap: wrap;
+  font-size: 18px;
+  margin-bottom: 20px;
+  justify-content: center;
+  color: #333;
+}
+
+.typingArea {
+  width: 100%;
+  padding: 15px;
+  font-size: 18px;
+  border: 2px solid #ddd;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+.sampleTextContainer {
+  display: flex;
+  flex-wrap: wrap;
+  font-size: 18px;
+  margin: 20px 0;
+  justify-content: center;
+  color: #333;
+}
+
+.word {
+  margin-right: 8px;
+}
+
+.keyboardContainer {
+  margin-top: 20px;
+}
+
+.keyboard {
+  display: inline-block;
+  text-align: center;
+}
+
+.keyboardRow {
+  margin-bottom: 8px;
+}
+
+.keyButton {
+  width: 45px;
+  height: 45px;
+  margin: 3px;
+  font-size: 16px;
+  text-align: center;
+  background-color: #f0f0f0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  cursor: pointer;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.keyButton:hover {
+  background-color: #ddd;
+}
+
+.activeKey {
+  background-color: yellow;
+  color: black;
+  font-weight: bold;
+  border: 2px solid #ffeb3b;
+}
+
+.errorText {
+  color: red;
+  font-weight: bold;
+}
+
+.correctText {
+  color: green;
+}
+
+.buttonContainer {
+  margin-top: 20px;
+}
+
+.startButton, .stopButton, .nextButton,.previousButton {
+  margin: 5px;
+  padding: 12px 25px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.startButton {
+  background-color: #4CAF50; /* Green */
+  color: white;
+}
+
+.startButton:hover {
+  background-color: #45a049;
+}
+
+.stopButton {
+  background-color: #f44336; /* Red */
+  color: white;
+}
+
+.stopButton:hover {
+  background-color: #d32f2f;
+}
+
+.nextButton {
+  background-color: #2196F3; /* Blue */
+  color: white;
+}
+
+.nextButton:hover {
+  background-color: #1976D2;
+}
+
+.previousButton {
+  background-color: hwb(337 30% 31%); /* Green */
+  color: white;
+}
+
+.previousButton:hover {
+  background-color: rgb(160, 69, 146);
+}
+.correctedText {
+  color: orange;
+  font-weight: bold;
+}
+
+.timerContainer, .accuracyContainer {
+  margin-top: 10px;
+  font-size: 18px;
+  color: #666;
+}
+
+@media (max-width: 600px) {
+  .keyButton {
+    width: 35px;
+    height: 35px;
+    font-size: 14px;
+  }
+
+  .startButton, .stopButton, .nextButton,.previousButton {
+    padding: 10px 20px;
+    font-size: 14px;
+  }
+
+  .typingArea {
+    font-size: 16px;
+    padding: 10px;
+  }
+  
+  
+
+  .typingContainer {
+    padding: 15px;
+  }
+}
